@@ -13,7 +13,7 @@ The system follows a hybrid design:
 
 ## 🧩 Agentic Architecture Breakdown
 
-### 🤖 Agent Functions (60%)
+### 🤖 Agent Functions (45%)
 Fifteen autonomous agents collaborate to perform complex financial tasks via shared states and orchestrated communication.
 
 | Agent Name | Responsibility |
@@ -34,11 +34,11 @@ Fifteen autonomous agents collaborate to perform complex financial tasks via sha
 | **EvaluationAgent** | Aggregates results and generates performance reports |
 | **CoordinatorAgent** | Central orchestrator managing dependencies and workflow |
 
-🧮 **Code Contribution:** ~60% — model intelligence, API integrations, and analytics.
+🧮 **Code Contribution:** ~45% — model intelligence, API integrations, and analytics.
 
 ---
 
-### 🔄 Workflow Patterns (25%)
+### 🔄 Workflow Patterns (30%)
 Implements a dynamic orchestration pipeline that routes data intelligently between agents.
 
 Key patterns:
@@ -48,18 +48,18 @@ Key patterns:
 - **State Management:** Shared memory maintains context  
 - **Error Recovery:** Fallback for failed API calls or incomplete streams  
 
-🧮 **Code Contribution:** ~25% — orchestration logic, message passing, and monitoring.
+🧮 **Code Contribution:** ~30% — orchestration logic, message passing, and monitoring.
 
 ---
 
-### 💻 Core Business Logic (15%)
+### 💻 Core Business Logic (25%)
 Handles deterministic processes outside of agent autonomy:
 - Stock data pre-processing and transformation  
 - Configuration management (API keys, environment)  
 - Rule-based filtering for restricted sectors  
 - Visualization and report export (Matplotlib, Pandas, JSON)
 
-🧮 **Code Contribution:** ~15% — ensures control, consistency, and validation.
+🧮 **Code Contribution:** ~25% — ensures control, consistency, and validation.
 
 ---
 
@@ -179,9 +179,9 @@ The system automatically saves logs, results, and charts in the `/output` direct
 
 | Component | Description | Share |
 |------------|--------------|-------|
-| 🤖 Agent Functions | Specialized autonomous agents | 60% |
-| 🔄 Workflow Patterns | Orchestration, routing, feedback loops | 25% |
-| 💻 Core Business Logic | Deterministic data handling and visualization | 15% |
+| 🤖 Agent Functions | Specialized autonomous agents | 45% |
+| 🔄 Workflow Patterns | Orchestration, routing, feedback loops | 30% |
+| 💻 Core Business Logic | Deterministic data handling and visualization | 25% |
 
 ---
 
@@ -190,8 +190,3 @@ This project is released under the **MIT License**.
 You may freely use, modify, and distribute it with proper attribution.
 
 ---
-
-### ✨ Author
-**Nivrati Acharjee**  
-📧 _[Add your contact or LinkedIn link here]_  
-💼 _Data Scientist | AI & Financial Systems Enthusiast_
