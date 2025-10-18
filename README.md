@@ -5,15 +5,15 @@
 It leverages a **modern Agentic AI architecture** built on LangGraph that combines autonomous agents, dynamic workflow orchestration, and structured data retrieval.
 
 The system follows a hybrid design:
-- 🤖 **45% Agent Functions:** 4 specialized AI agents for research orchestration  
-- 🔄 **30% Workflow Patterns:** Dynamic routing, conditional execution, and evaluator-optimizer loops  
-- 💻 **25% Code Business Logic:** Tool wrappers, data processing, and report generation  
+- 🤖 **Agent Functions:** 4 specialized AI agents for research orchestration  
+- 🔄 **Workflow Patterns:** Dynamic routing, conditional execution, and evaluator-optimizer loops  
+- 💻 **Code Business Logic:** Tool wrappers, data processing, and report generation  
 
 ---
 
 ## 🧩 Agentic Architecture Breakdown
 
-### 🤖 Agent Functions (45%)
+### 🤖 Agent Functions 
 Four autonomous agents collaborate to perform comprehensive financial research via shared states and orchestrated communication.
 
 | Agent Name | Responsibility |
@@ -23,11 +23,11 @@ Four autonomous agents collaborate to perform comprehensive financial research v
 | **ToolWorkers** | Execute data retrieval (news, financials, SEC filings, market data) |
 | **EvaluatorAgent** | Quality assurance with iterative refinement loop |
 
-🧮 **Code Contribution:** ~45% — agent intelligence, LLM reasoning, and adaptive planning.
+🧮 **Code Contribution:** — agent intelligence, LLM reasoning, and adaptive planning.
 
 ---
 
-### 🔄 Workflow Patterns (35%)
+### 🔄 Workflow Patterns 
 Implements a dynamic LangGraph orchestration pipeline with conditional routing and feedback loops.
 
 Key patterns:
@@ -37,18 +37,18 @@ Key patterns:
 - **Evaluator-Optimizer Loop:** Iterative report refinement with quality gates  
 - **State Management:** Shared ResearchState maintains context across agents  
 
-🧮 **Code Contribution:** ~35% — LangGraph workflow, conditional edges, and state management.
+🧮 **Code Contribution:** — LangGraph workflow, conditional edges, and state management.
 
 ---
 
-### 💻 Code Business Logic (25%)
+### 💻 Code Business Logic 
 Handles deterministic processes and tool integrations:
 - **Tool Wrappers:** NewsAPI, yfinance, SEC API integrations  
 - **Data Processing:** Article preprocessing, sentiment classification, entity extraction  
 - **Report Generation:** Structured investment analysis with SWOT framework  
 - **Error Handling:** Graceful fallbacks for API failures  
 
-🧮 **Code Contribution:** ~25% — ensures reliability, data quality, and structured outputs.
+🧮 **Code Contribution:** — ensures reliability, data quality, and structured outputs.
 
 ---
 
@@ -180,11 +180,11 @@ app.invoke({'stock_symbol': 'NVDA'})  # AI/semiconductor company
 
 ## 🧠 Architecture Summary
 
-| Component | Description | Share |
-|------------|--------------|-------|
-| 🤖 Agent Functions | Profiler, Planner, Tool Workers, Evaluator | 45% |
-| 🔄 Workflow Patterns | LangGraph orchestration, conditional routing, feedback loops | 30% |
-| 💻 Code Business Logic | Tool wrappers, data processing, report generation | 25% |
+| Component | Description | 
+|------------|--------------|
+| 🤖 Agent Functions | Profiler, Planner, Tool Workers, Evaluator 
+| 🔄 Workflow Patterns | LangGraph orchestration, conditional routing, feedback loops 
+| 💻 Code Business Logic | Tool wrappers, data processing, report generation 
 
 ---
 
