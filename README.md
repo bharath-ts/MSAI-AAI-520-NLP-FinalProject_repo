@@ -5,15 +5,15 @@
 It leverages a **modern Agentic AI architecture** built on LangGraph that combines autonomous agents, dynamic workflow orchestration, and structured data retrieval.
 
 The system follows a hybrid design:
-- 🤖 **40% Agent Functions:** 4 specialized AI agents for research orchestration  
-- 🔄 **35% Workflow Patterns:** Dynamic routing, conditional execution, and evaluator-optimizer loops  
+- 🤖 **45% Agent Functions:** 4 specialized AI agents for research orchestration  
+- 🔄 **30% Workflow Patterns:** Dynamic routing, conditional execution, and evaluator-optimizer loops  
 - 💻 **25% Code Business Logic:** Tool wrappers, data processing, and report generation  
 
 ---
 
 ## 🧩 Agentic Architecture Breakdown
 
-### 🤖 Agent Functions (40%)
+### 🤖 Agent Functions (45%)
 Four autonomous agents collaborate to perform comprehensive financial research via shared states and orchestrated communication.
 
 | Agent Name | Responsibility |
@@ -23,7 +23,7 @@ Four autonomous agents collaborate to perform comprehensive financial research v
 | **ToolWorkers** | Execute data retrieval (news, financials, SEC filings, market data) |
 | **EvaluatorAgent** | Quality assurance with iterative refinement loop |
 
-🧮 **Code Contribution:** ~40% — agent intelligence, LLM reasoning, and adaptive planning.
+🧮 **Code Contribution:** ~45% — agent intelligence, LLM reasoning, and adaptive planning.
 
 ---
 
@@ -61,7 +61,7 @@ Handles deterministic processes and tool integrations:
 
 ### 2️⃣ Clone Repository
 ```bash
-git clone https://github.com/yourusername/financial-agent.git
+git clone https://github.com/bharath-ts/MSAI-AAI-520-NLP-FinalProject_repo.git
 cd financial-agent
 ```
 
@@ -182,32 +182,9 @@ app.invoke({'stock_symbol': 'NVDA'})  # AI/semiconductor company
 
 | Component | Description | Share |
 |------------|--------------|-------|
-| 🤖 Agent Functions | Profiler, Planner, Tool Workers, Evaluator | 40% |
-| 🔄 Workflow Patterns | LangGraph orchestration, conditional routing, feedback loops | 35% |
+| 🤖 Agent Functions | Profiler, Planner, Tool Workers, Evaluator | 45% |
+| 🔄 Workflow Patterns | LangGraph orchestration, conditional routing, feedback loops | 30% |
 | 💻 Code Business Logic | Tool wrappers, data processing, report generation | 25% |
-
----
-
-## 🚧 Current Limitations & Future Work
-
-### Data APIs and Coverage
-- `yfinance` data can be incomplete — add fallbacks or retries
-- NewsAPI content often truncates articles — integrate alternative sources
-- SEC extraction limited to 10-K filings — expand to 10-Q and other forms
-
-### Grounding and Citations
-- Add explicit source attributions (URL, title, timestamp) in outputs
-- Persist retrieved contexts with hashes for verifiable provenance
-
-### Evaluation
-- Add quantitative checks for factuality and numeric consistency
-- Track evaluator decisions and compute approval rates per sector
-- Implement citation overlap verification
-
-### Robustness
-- Implement retries, timeouts, and cache layers for API requests
-- Add schema guards for JSON outputs and stricter parsing
-- Consider tiered LLMs for cost optimization
 
 ---
 
