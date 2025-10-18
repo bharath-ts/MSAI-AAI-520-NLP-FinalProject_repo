@@ -5,9 +5,9 @@
 It leverages a **modern Agentic AI architecture** that combines autonomous agents, dynamic workflow orchestration, and traditional business logic.
 
 The system follows a hybrid design:
-- 🤖 **60% Agent Functions:** 15 specialized AI agents for finance analytics  
-- 🔄 **25% Workflow Patterns:** Dynamic orchestration, routing, and feedback learning  
-- 💻 **15% Core Business Logic:** Rule-based computation, APIs, and I/O management  
+- 🤖 **45% Agent Functions:** 15 specialized AI agents for finance analytics  
+- 🔄 **30% Workflow Patterns:** Dynamic orchestration, routing, and feedback learning  
+- 💻 **25% Code Business Logic:** Rule-based computation, APIs, and I/O management  
 
 ---
 
@@ -52,7 +52,7 @@ Key patterns:
 
 ---
 
-### 💻 Core Business Logic (25%)
+### 💻 Code Business Logic (25%)
 Handles deterministic processes outside of agent autonomy:
 - Stock data pre-processing and transformation  
 - Configuration management (API keys, environment)  
@@ -181,7 +181,7 @@ The system automatically saves logs, results, and charts in the `/output` direct
 |------------|--------------|-------|
 | 🤖 Agent Functions | Specialized autonomous agents | 45% |
 | 🔄 Workflow Patterns | Orchestration, routing, feedback loops | 30% |
-| 💻 Core Business Logic | Deterministic data handling and visualization | 25% |
+| 💻 Code Business Logic | Deterministic data handling and visualization | 25% |
 
 ---
 
