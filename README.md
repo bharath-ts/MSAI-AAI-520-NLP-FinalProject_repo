@@ -1,65 +1,54 @@
 # 🧠 Financial Agent: Multi-Agent AI Bot for Stock Recommendation
 
 ## 🚀 Project Overview
-**Financial Agent (FA)** is a multi-agent financial intelligence system designed to autonomously collect market data, analyze stocks, evaluate risk, and recommend trades.  
-It leverages a **modern Agentic AI architecture** that combines autonomous agents, dynamic workflow orchestration, and traditional business logic.
+**Financial Agent (FA)** is a multi-agent financial intelligence system designed to autonomously collect market data, analyze stocks, and generate investment research reports.  
+It leverages a **modern Agentic AI architecture** built on LangGraph that combines autonomous agents, dynamic workflow orchestration, and structured data retrieval.
 
 The system follows a hybrid design:
-- 🤖 **45% Agent Functions:** 15 specialized AI agents for finance analytics  
-- 🔄 **30% Workflow Patterns:** Dynamic orchestration, routing, and feedback learning  
-- 💻 **25% Code Business Logic:** Rule-based computation, APIs, and I/O management  
+- 🤖 **Agent Functions:** 4 specialized AI agents for research orchestration  
+- 🔄 **Workflow Patterns:** Dynamic routing, conditional execution, and evaluator-optimizer loops  
+- 💻 **Code Business Logic:** Tool wrappers, data processing, and report generation  
 
 ---
 
 ## 🧩 Agentic Architecture Breakdown
 
-### 🤖 Agent Functions (45%)
-Fifteen autonomous agents collaborate to perform complex financial tasks via shared states and orchestrated communication.
+### 🤖 Agent Functions 
+Four autonomous agents collaborate to perform comprehensive financial research via shared states and orchestrated communication.
 
 | Agent Name | Responsibility |
 |-------------|----------------|
-| **MarketDataAgent** | Fetches live market feeds (Yahoo Finance / AlphaVantage) |
-| **SentimentAgent** | Performs sentiment analysis on financial news and tweets |
-| **FeatureEngineeringAgent** | Generates features from price history, volume, and indicators |
-| **ModelTrainerAgent** | Trains ML models (RandomForest, XGBoost) for trend prediction |
-| **PredictionAgent** | Generates buy/sell/hold predictions |
-| **RiskAnalysisAgent** | Calculates VaR, Sharpe ratio, and exposure limits |
-| **PortfolioAgent** | Allocates capital and optimizes portfolio diversification |
-| **BacktestingAgent** | Validates strategies using historical data |
-| **StrategyOptimizerAgent** | Tunes hyperparameters and trading thresholds |
-| **PerformanceMonitorAgent** | Tracks ongoing model and agent performance |
-| **ComplianceAgent** | Ensures trades follow regulatory and policy constraints |
-| **LoggingAgent** | Handles structured logging and persistence |
-| **NotificationAgent** | Sends alerts and updates to users |
-| **EvaluationAgent** | Aggregates results and generates performance reports |
-| **CoordinatorAgent** | Central orchestrator managing dependencies and workflow |
+| **ProfilerAgent** | Fetches company profile (sector, industry, business summary) |
+| **PlannerAgent** | Generates dynamic research plans based on company characteristics |
+| **ToolWorkers** | Execute data retrieval (news, financials, SEC filings, market data) |
+| **EvaluatorAgent** | Quality assurance with iterative refinement loop |
 
-🧮 **Code Contribution:** ~45% — model intelligence, API integrations, and analytics.
+🧮 **Code Contribution:** — agent intelligence, LLM reasoning, and adaptive planning.
 
 ---
 
-### 🔄 Workflow Patterns (30%)
-Implements a dynamic orchestration pipeline that routes data intelligently between agents.
+### 🔄 Workflow Patterns 
+Implements a dynamic LangGraph orchestration pipeline with conditional routing and feedback loops.
 
 Key patterns:
-- **Task Delegation:** Coordinator assigns subtasks to relevant agents  
-- **Parallel Execution:** Asynchronous data retrieval, analysis, and sentiment scoring  
-- **Feedback Loop:** Continuous learning from market performance  
-- **State Management:** Shared memory maintains context  
-- **Error Recovery:** Fallback for failed API calls or incomplete streams  
+- **Dynamic Planning:** Planner adapts research sequence based on company sector/industry  
+- **Conditional Routing:** Research router determines next step based on plan state  
+- **Tool Orchestration:** Sequential execution of data retrieval tools  
+- **Evaluator-Optimizer Loop:** Iterative report refinement with quality gates  
+- **State Management:** Shared ResearchState maintains context across agents  
 
-🧮 **Code Contribution:** ~30% — orchestration logic, message passing, and monitoring.
+🧮 **Code Contribution:** — LangGraph workflow, conditional edges, and state management.
 
 ---
 
-### 💻 Code Business Logic (25%)
-Handles deterministic processes outside of agent autonomy:
-- Stock data pre-processing and transformation  
-- Configuration management (API keys, environment)  
-- Rule-based filtering for restricted sectors  
-- Visualization and report export (Matplotlib, Pandas, JSON)
+### 💻 Code Business Logic 
+Handles deterministic processes and tool integrations:
+- **Tool Wrappers:** NewsAPI, yfinance, SEC API integrations  
+- **Data Processing:** Article preprocessing, sentiment classification, entity extraction  
+- **Report Generation:** Structured investment analysis with SWOT framework  
+- **Error Handling:** Graceful fallbacks for API failures  
 
-🧮 **Code Contribution:** ~25% — ensures control, consistency, and validation.
+🧮 **Code Contribution:** — ensures reliability, data quality, and structured outputs.
 
 ---
 
@@ -72,7 +61,7 @@ Handles deterministic processes outside of agent autonomy:
 
 ### 2️⃣ Clone Repository
 ```bash
-git clone https://github.com/yourusername/financial-agent.git
+git clone https://github.com/bharath-ts/MSAI-AAI-520-NLP-FinalProject_repo.git
 cd financial-agent
 ```
 
@@ -90,98 +79,112 @@ source venv/bin/activate
 
 ### 4️⃣ Install Dependencies
 ```bash
-pip install -r requirements.txt
+pip install langchain langgraph langchain-google-genai newsapi-python yfinance sec-api pandas numpy
 ```
 
-### 5️⃣ Configure Environment Variables
-Create a `.env` file in the root directory with your API keys:
-```bash
-ALPHAVANTAGE_API_KEY=your_api_key
-YAHOO_FINANCE_API_KEY=your_api_key
+### 5️⃣ Configure API Keys
+Set up your API keys in the notebook or as environment variables:
+```python
+# In notebook cells
+Gemini_API_key = 'your_gemini_api_key'
+news_api = 'your_newsapi_key'
+sec_api = 'your_sec_api_key'
 ```
 
-### 6️⃣ Run Notebook or Script
+**Required APIs:**
+- **Google Gemini API:** For LLM reasoning and text generation
+- **NewsAPI:** For financial news retrieval
+- **SEC API:** For regulatory filings access
+
+### 6️⃣ Run the Notebook
 Launch Jupyter Notebook:
 ```bash
 jupyter notebook
 ```
-Then open and run the main notebook: `Financial_Agent.ipynb`
+Then open and run: `Financial_Agent_Multi_Agent_AI_Bot_for_Stock_recommendation.ipynb`
 
-Or run as a Python script (if available):
-```bash
-python main.py
+### 7️⃣ Test the System
+Run test cases with different stock symbols:
+```python
+# Test with different companies
+app.invoke({'stock_symbol': 'AAPL'})  # Tech company
+app.invoke({'stock_symbol': 'DUK'})   # Utility company  
+app.invoke({'stock_symbol': 'NVDA'})  # AI/semiconductor company
 ```
-
-### 7️⃣ (Optional) Export Reports
-The system automatically saves logs, results, and charts in the `/output` directory.
 
 ---
 
 ## 🔁 Agentic Flow (Execution Pipeline)
-1. CoordinatorAgent initializes workflow  
-2. MarketDataAgent retrieves & cleans price data  
-3. SentimentAgent collects & scores news  
-4. FeatureEngineeringAgent prepares input vectors  
-5. ModelTrainerAgent builds & validates ML models  
-6. PredictionAgent generates trading signals  
-7. RiskAnalysisAgent adjusts exposure thresholds  
-8. PortfolioAgent optimizes asset allocation  
-9. BacktestingAgent validates strategy  
-10. EvaluationAgent compiles metrics  
-11. NotificationAgent sends final insights  
+1. **ProfilerAgent** → Fetches company profile and initializes state
+2. **PlannerAgent** → Generates dynamic research plan based on company characteristics
+3. **Research Router** → Determines next step from plan
+4. **Tool Workers** → Execute data retrieval in planned sequence:
+   - `fetch_news` → News chaining with sentiment analysis and entity extraction
+   - `fetch_financials` → Key financial metrics from yfinance
+   - `fetch_sec_filings` → Risk factors and MD&A from SEC filings
+   - `fetch_market_data` → Market performance and analyst recommendations
+5. **Report Generator** → Creates comprehensive investment analysis
+6. **Evaluator Agent** → Quality assurance with iterative refinement
+7. **Final Report** → Outputs polished investment recommendation
 
 ---
 
 ## ⚙️ Tech Stack
 
-| Layer | Technology |
-|--------|-------------|
-| **Language** | Python 3.10+ |
-| **Data** | Pandas, NumPy, yfinance |
-| **ML Models** | scikit-learn, XGBoost |
-| **NLP** | spaCy, Transformers |
-| **Visualization** | Matplotlib, Seaborn |
-| **Agent Framework** | Custom lightweight orchestrator |
+| Layer | Technology | Purpose |
+|--------|-------------|---------|
+| **Language** | Python 3.10+ | Core implementation |
+| **Agent Framework** | LangGraph | Workflow orchestration and state management |
+| **LLM Integration** | LangChain + Google GenAI | Agent reasoning and text generation |
+| **Data Sources** | yfinance, NewsAPI, SEC API | Market data, news, and regulatory filings |
+| **Data Processing** | Pandas, NumPy | Data manipulation and analysis |
+| **Output Parsing** | JSON, String parsers | Structured data extraction |
 
 ---
 
 ## 📈 Example Outputs
-- 📊 Stock buy/sell recommendations  
-- 🧮 Portfolio allocation summary  
-- 💬 Sentiment polarity & trend score  
-- ⚠️ Risk exposure analysis  
-- 🧠 Model performance metrics (precision, recall, profit ratio)
+- 📊 **Company Profile:** Sector, industry, business summary
+- 📰 **News Analysis:** Sentiment classification, entity extraction, trend insights
+- 💰 **Financial Metrics:** Revenue, net income, assets, liabilities
+- ⚖️ **SEC Insights:** Risk factors and management discussion summaries
+- 📈 **Market Context:** Market cap, 52-week range, beta, analyst consensus
+- 📋 **Investment Report:** Comprehensive SWOT analysis with buy/sell/hold recommendation
 
 ---
 
-## 📘 Notebook Guide
+## 📘 Notebook Structure
 
 | Section | Description |
 |----------|--------------|
-| **1. Initialization** | Imports, configuration, environment setup |
-| **2. Agent Definitions** | Specialized agent logic |
-| **3. Workflow Orchestration** | Coordination and data routing |
-| **4. Training & Prediction** | Model creation and inference |
-| **5. Evaluation** | Metrics computation and visualization |
-| **6. Output & Logging** | Export reports and logs |
+| **1. Introduction** | Project overview and motivation |
+| **2. Libraries & Environment** | Dependencies and API setup |
+| **3. Data Sources & Tools** | Tool definitions and integrations |
+| **4. Agent Functions** | Profiler, Planner, Tool Workers, Evaluator |
+| **5. Workflow Patterns** | LangGraph implementation with conditional routing |
+| **6. Evaluation** | Quality assurance and refinement loops |
+| **7. Results & Insights** | End-to-end testing and analysis |
+| **8. Limitations & Future Work** | Current constraints and improvement areas |
+| **9. How to Run** | Reproducibility instructions |
+| **10. Conclusion** | Summary and key achievements |
 
 ---
 
 ## 🧭 Key Design Principles
-- **Agent Autonomy:** Independent but context-aware modules  
-- **Reusability:** Modular agents reusable across financial pipelines  
-- **Transparency:** Logging and metrics for accountability  
-- **Adaptability:** Real-time feedback updates models dynamically  
+- **Adaptive Planning:** Research sequence adapts to company characteristics
+- **Grounded Retrieval:** All analysis backed by real market data
+- **Iterative Refinement:** Quality gates ensure report quality
+- **Modular Architecture:** Reusable agents and tools
+- **Transparency:** Full logging and state tracking
 
 ---
 
 ## 🧠 Architecture Summary
 
-| Component | Description | Share |
-|------------|--------------|-------|
-| 🤖 Agent Functions | Specialized autonomous agents | 45% |
-| 🔄 Workflow Patterns | Orchestration, routing, feedback loops | 30% |
-| 💻 Code Business Logic | Deterministic data handling and visualization | 25% |
+| Component | Description | 
+|------------|--------------|
+| 🤖 Agent Functions | Profiler, Planner, Tool Workers, Evaluator 
+| 🔄 Workflow Patterns | LangGraph orchestration, conditional routing, feedback loops 
+| 💻 Code Business Logic | Tool wrappers, data processing, report generation 
 
 ---
 
@@ -190,3 +193,11 @@ This project is released under the **MIT License**.
 You may freely use, modify, and distribute it with proper attribution.
 
 ---
+
+## 👥 Team
+**Not-A-Bot (Group -7)**
+- Jasmeet Kaur
+- Himanshu Kumar  
+- Bharath TS
+
+**Course:** AAI-520 — Final Project
